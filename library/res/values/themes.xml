@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Use in your applications -->
+
+    <style name="PrefsTheme" parent="@android:style/Theme.Light">
+        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference</item>
+        <item name="dialogPreferenceStyle">@style/Preference.DialogPreference</item>
+        <item name="editTextPreferenceStyle">@style/Preference.DialogPreference.EditTextPreference</item>
+        <item name="preferenceStyle">@style/Preference</item>
+        <item name="preferenceCategoryStyle">@style/Preference.Category</item>
+        <item name="preferenceFrameLayoutStyle">@style/PreferenceFrameLayout</item>
+        <item name="preferenceScreenStyle">@style/Preference.PreferenceScreen</item>
+        <item name="ringtonePreferenceStyle">@style/Preference.RingtonePreference</item>
+        <item name="selectableItemBackground">@null</item>
+        <item name="activatedBackgroundIndicator">@null</item>
+    </style>
+
+</resources>

@@ -1,0 +1,87 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="PreferenceFrameLayout" parent="@android:style/Widget">
+        <item name="android:paddingTop">0dip</item>
+        <item name="android:paddingBottom">0dip</item>
+        <item name="android:paddingLeft">0dip</item>
+        <item name="android:paddingRight">0dip</item>
+    </style>
+
+    <!-- Preference Styles -->
+
+    <style name="Preference">
+        <item name="layout">@layout/preference</item>
+    </style>
+
+    <style name="PreferenceFragment">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="Preference.Information">
+        <item name="layout">@layout/preference_information</item>
+        <item name="enabled">false</item>
+        <item name="shouldDisableView">false</item>
+    </style>
+
+    <style name="Preference.Category">
+        <item name="layout">@layout/preference_category</item>
+        <!-- The title should not dim if the category is disabled, instead only the preference children should dim. -->
+        <item name="shouldDisableView">false</item>
+        <item name="selectable">false</item>
+    </style>
+
+    <style name="Preference.CheckBoxPreference">
+        <item name="widgetLayout">@layout/preference_widget_checkbox</item>
+    </style>
+
+    <!-- Localize -->
+    <style name="Preference.SwitchPreference">
+        <item name="widgetLayout">@layout/preference_widget_switch</item>
+        <item name="switchTextOn">ON</item>
+        <item name="switchTextOff">OFF</item>
+    </style>
+
+    <style name="Preference.PreferenceScreen"></style>
+
+    <style name="Preference.DialogPreference">
+        <item name="positiveButtonText">@string/ok</item>
+        <item name="negativeButtonText">@string/cancel</item>
+    </style>
+
+    <style name="Preference.DialogPreference.YesNoPreference">
+        <item name="positiveButtonText">@string/yes</item>
+        <item name="negativeButtonText">@string/no</item>
+    </style>
+
+    <style name="Preference.DialogPreference.EditTextPreference">
+        <item name="dialogLayout">@layout/preference_dialog_edittext</item>
+    </style>
+
+    <style name="Preference.RingtonePreference">
+        <item name="ringtoneType">ringtone</item>
+        <item name="showSilent">true</item>
+        <item name="showDefault">true</item>
+    </style>
+
+    <!-- No margins or background by default. Could be different for x-large screens -->
+    <style name="PreferencePanel"></style>
+
+    <!--
+The attributes are overridden here because the x-large or large resources may have
+changed the margins and background in the parent PreferencePanel style.
+    -->
+    <style name="PreferencePanel.Dialog">
+        <item name="android:layout_marginLeft">0dip</item>
+        <item name="android:layout_marginRight">0dip</item>
+        <item name="android:layout_marginTop">0dip</item>
+        <item name="android:layout_marginBottom">0dip</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="FragmentBreadCrumbs" parent="@android:style/Widget">
+        <item name="android:padding">4dp</item>
+        <item name="android:animateLayoutChanges">true</item>
+    </style>
+
+</resources>
