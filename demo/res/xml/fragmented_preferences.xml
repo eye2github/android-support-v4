@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!-- This is a primitive example showing the different types of preferences available. -->
+
+<android.support.v4.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:delicacyset="http://schemas.android.com/apk/res/android.support.v4" >
+
+    <android.support.v4.preference.PreferenceCategory delicacyset:title="@string/inline_preferences" >
+        <android.support.v4.preference.CheckBoxPreference
+            delicacyset:key="checkbox_preference"
+            delicacyset:summary="@string/summary_checkbox_preference"
+            delicacyset:title="@string/title_checkbox_preference" />
+    </android.support.v4.preference.PreferenceCategory>
+    <android.support.v4.preference.PreferenceCategory delicacyset:title="@string/dialog_based_preferences" >
+        <android.support.v4.preference.EditTextPreference
+            delicacyset:dialogTitle="@string/dialog_title_edittext_preference"
+            delicacyset:key="edittext_preference"
+            delicacyset:summary="@string/summary_edittext_preference"
+            delicacyset:title="@string/title_edittext_preference" />
+
+        <android.support.v4.preference.ListPreference
+            delicacyset:dialogTitle="@string/dialog_title_list_preference"
+            delicacyset:entries="@array/entries_list_preference"
+            delicacyset:entryValues="@array/entryvalues_list_preference"
+            delicacyset:key="list_preference"
+            delicacyset:summary="@string/summary_list_preference"
+            delicacyset:title="@string/title_list_preference" />
+    </android.support.v4.preference.PreferenceCategory>
+    <android.support.v4.preference.PreferenceCategory delicacyset:title="@string/launch_preferences" >
+
+        <!--
+             This PreferenceScreen tag sends the user to a new fragment of
+             preferences.  If running in a large screen, they can be embedded
+             inside of the overall preferences UI.
+        -->
+        <android.support.v4.preference.PreferenceScreen
+            delicacyset:fragment="android.support.v4.PreferenceWithHeaders$Prefs1FragmentInner"
+            delicacyset:summary="@string/summary_fragment_preference"
+            delicacyset:title="@string/title_fragment_preference" >
+
+            <!-- Arbitrary key/value pairs can be included for fragment arguments 
+            <extra
+                android:name="someKey"
+                android:value="somePrefValue" />-->
+        </android.support.v4.preference.PreferenceScreen>
+
+
+        <!--
+             This PreferenceScreen tag sends the user to a completely different
+             activity, switching out of the current preferences UI.
+        -->
+        <android.support.v4.preference.PreferenceScreen
+            delicacyset:summary="@string/summary_intent_preference"
+            delicacyset:title="@string/title_intent_preference" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.android.com" />
+        </android.support.v4.preference.PreferenceScreen>
+    </android.support.v4.preference.PreferenceCategory>
+    <android.support.v4.preference.PreferenceCategory delicacyset:title="@string/preference_attributes" >
+        <android.support.v4.preference.CheckBoxPreference
+            delicacyset:key="parent_checkbox_preference"
+            delicacyset:summary="@string/summary_parent_preference"
+            delicacyset:title="@string/title_parent_preference" />
+
+        <!-- The visual style of a child is defined by this styled theme attribute. -->
+        <android.support.v4.preference.CheckBoxPreference
+            delicacyset:dependency="parent_checkbox_preference"
+            delicacyset:key="child_checkbox_preference"
+            delicacyset:summary="@string/summary_child_preference"
+            delicacyset:title="@string/title_child_preference" />
+    </android.support.v4.preference.PreferenceCategory>
+
+</android.support.v4.preference.PreferenceScreen>
